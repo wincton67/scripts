@@ -2,9 +2,9 @@ local pMeta = FindMetaTable 'Player'
 
 function pMeta:SetCheater(bool)
 	if bool then
-		hook.Run('AddCheater', ply)
+		hook.Run('AddCheater', self)
 	end
-	ply.Cheater = bool or nil
+	self.Cheater = bool or nil
 end
 
 hook.Add('AddCheater', 'CheatPunish', function(ply)
